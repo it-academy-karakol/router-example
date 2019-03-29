@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -7,9 +7,12 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/services">Services</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to={{
+              pathname: '/services',
+              hash: 'elaman'
+            }}>Services</Link></li>
           </ul>
 
           <Route path="/" exact render={() => (
