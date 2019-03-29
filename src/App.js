@@ -1,39 +1,20 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Navigation from './components/Navigation/Navigation';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Services from './components/Services/Services';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to={{
-              pathname: '/services',
-              hash: 'elaman'
-            }}>Services</Link></li>
-          </ul>
+          <Navigation />
 
-          <Route path="/" exact render={() => (
-            <section>
-              <h1>Home</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut accusamus deserunt obcaecati vero earum commodi, delectus dolore qui eius recusandae aliquam laboriosam quas quod nihil magnam porro asperiores quis incidunt.</p>
-            </section>
-          )} />
-          <Route path="/about" render={() => (
-            <section>
-              <h1>About</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut accusamus deserunt obcaecati vero earum commodi, delectus dolore qui eius recusandae aliquam laboriosam quas quod nihil magnam porro asperiores quis incidunt.</p>
-            </section>
-          )} />
-          <Route path="/services" render={() => (
-            <section>
-              <h1>Services</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut accusamus deserunt obcaecati vero earum commodi, delectus dolore qui eius recusandae aliquam laboriosam quas quod nihil magnam porro asperiores quis incidunt.</p>
-            </section>
-          )} />
-
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/services" component={Services} />
         </div>
       </BrowserRouter>
     );
