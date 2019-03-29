@@ -8,7 +8,7 @@ function Navigation(props) {
       <li><Link to="/about">About</Link></li>
       <li><Link to={{
         pathname: '/services',
-        hash: 'elaman'
+        hash: 'bottom'
       }}>Services</Link></li>
     </ul>
   );
