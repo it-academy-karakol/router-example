@@ -1,15 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import classes from './Navigation.module.css'
 
 function Navigation(props) {
   return (
-    <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/about">About</Link></li>
-      <li><Link to={{
+    <ul className={classes.Navigation}>
+      <li><NavLink
+        activeClassName={classes.active}
+        activeStyle={{color: 'black'}}
+        to="/">Home</NavLink></li>
+      <li><NavLink
+        activeClassName={classes.active}
+        to="/about">About</NavLink></li>
+      <li><NavLink
+        activeClassName={classes.active}
+        to={{
         pathname: '/services',
         hash: 'bottom'
-      }}>Services</Link></li>
+      }}>Services</NavLink></li>
     </ul>
   );
 }
